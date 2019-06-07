@@ -26,20 +26,20 @@ public class Application {
         Operator clearOperator = new ClearOperator(stack);
         //返回操作
         Operator undoOperator = new UndoOperator(stack);
-        operatorMap.put(ParseAndExecCommod.ADD,addOperator);
-        operatorMap.put(ParseAndExecCommod.SUB,subOperator);
-        operatorMap.put(ParseAndExecCommod.MULTI,multiOperator);
-        operatorMap.put(ParseAndExecCommod.DIV,divOperator);
-        operatorMap.put(ParseAndExecCommod.SQRT,sqrtOperator);
-        operatorMap.put(ParseAndExecCommod.CLEAR,clearOperator);
-        operatorMap.put(ParseAndExecCommod.UNDO,undoOperator);
-        ParseAndExecCommod parseAndExecCommod = new ParseAndExecCommod(stack,operatorMap);
+        operatorMap.put(ParseAndExecCommod.ADD, addOperator);
+        operatorMap.put(ParseAndExecCommod.SUB, subOperator);
+        operatorMap.put(ParseAndExecCommod.MULTI, multiOperator);
+        operatorMap.put(ParseAndExecCommod.DIV, divOperator);
+        operatorMap.put(ParseAndExecCommod.SQRT, sqrtOperator);
+        operatorMap.put(ParseAndExecCommod.CLEAR, clearOperator);
+        operatorMap.put(ParseAndExecCommod.UNDO, undoOperator);
+        ParseAndExecCommod parseAndExecCommod = new ParseAndExecCommod(stack, operatorMap);
         System.out.println("*******************RPN Calculator*******************");
         Scanner scanner = new Scanner(System.in);
-        while(true){
+        while (true) {
             String str = scanner.nextLine();
             //如果什么也没输入，则跳过本次循环
-            if(str.trim().equals("")){
+            if (str.trim().equals("")) {
                 continue;
             }
             //将输入的命令前后空格过滤掉，防止切割出现多余的空格

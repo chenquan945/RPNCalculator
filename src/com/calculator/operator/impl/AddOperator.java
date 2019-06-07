@@ -27,7 +27,7 @@ public class AddOperator implements Operator {
      */
     @Override
     public void exec() {
-        if(!StackUtil.checkStackSize(stack,2, ParseAndExecCommod.ADD)){
+        if (!StackUtil.checkStackSize(stack, 2, ParseAndExecCommod.ADD)) {
             BigDecimal para1 = new BigDecimal(stack.pop());
             BigDecimal para2 = new BigDecimal(stack.pop());
             BigDecimal result = para2.add(para1);

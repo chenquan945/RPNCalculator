@@ -64,7 +64,7 @@ public class ParseAndExecCommod {
                     BigDecimal bigDecimal = new BigDecimal(str);
                 }catch(Exception exception){
                     //非数值类型，跳出循环，结束本次命令
-                    System.out.println("The number entered is incorrect:"+str);
+                    System.out.println("The number(position:"+ParseAndExecCommod.position+") entered is incorrect:"+str);
                     break;
                 }
                 //数值类型，直接压栈

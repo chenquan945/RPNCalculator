@@ -29,11 +29,11 @@ public class UndoOperator implements Operator {
     @Override
     public void exec() {
         //如果当前没有最近一次的Stack，则提示信息
-        if(doneList.size()==0){
+        if (doneList.size() == 0) {
             System.out.println("There is currently no operation to cancel！");
-        }else{
+        } else {
             //取出最近一次的Stack，并将其赋给当前的Stack
-            Stack preStack = doneList.get(doneList.size()-1);
+            Stack preStack = doneList.get(doneList.size() - 1);
             stack.clear();
             stack.addAll(preStack);
             //赋值完成后从列表里清除

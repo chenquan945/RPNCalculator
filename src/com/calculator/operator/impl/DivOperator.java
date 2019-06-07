@@ -28,14 +28,14 @@ public class DivOperator implements Operator {
      */
     @Override
     public void exec() {
-        if(!StackUtil.checkStackSize(stack,2, ParseAndExecCommod.DIV)){
+        if (!StackUtil.checkStackSize(stack, 2, ParseAndExecCommod.DIV)) {
             BigDecimal para1 = new BigDecimal(stack.pop());
             BigDecimal para2 = new BigDecimal(stack.pop());
             BigDecimal result;
-            try{
+            try {
                 result = para2.divide(para1);
-            }catch(Exception exception){
-                result = para2.divide(para1,15, RoundingMode.UP);
+            } catch (Exception exception) {
+                result = para2.divide(para1, 15, RoundingMode.UP);
             }
             result = BigDecimalUtil.setScaleAndStripZeros(result);
             stack.push(result.toString());

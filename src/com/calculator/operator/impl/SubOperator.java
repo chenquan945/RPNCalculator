@@ -26,7 +26,7 @@ public class SubOperator implements Operator {
      */
     @Override
     public void exec() {
-        if(!StackUtil.checkStackSize(stack,2, ParseAndExecCommod.SUB)){
+        if (!StackUtil.checkStackSize(stack, 2, ParseAndExecCommod.SUB)) {
             BigDecimal para1 = new BigDecimal(stack.pop());
             BigDecimal para2 = new BigDecimal(stack.pop());
             BigDecimal result = para2.subtract(para1);

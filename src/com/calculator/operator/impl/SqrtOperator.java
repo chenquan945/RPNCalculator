@@ -28,11 +28,11 @@ public class SqrtOperator implements Operator {
     @Override
     public void exec() {
 
-        if(!StackUtil.checkStackSize(stack,1, ParseAndExecCommod.SQRT)){
+        if (!StackUtil.checkStackSize(stack, 1, ParseAndExecCommod.SQRT)) {
             BigDecimal para1 = new BigDecimal(stack.pop());
             BigDecimal result = sqrt(para1);
-            if(result.scale()>10){
-                result=result.setScale(10, BigDecimal.ROUND_HALF_UP).stripTrailingZeros();
+            if (result.scale() > 10) {
+                result = result.setScale(10, BigDecimal.ROUND_HALF_UP).stripTrailingZeros();
             }
             stack.push(result.toString());
         }
@@ -40,11 +40,11 @@ public class SqrtOperator implements Operator {
     }
 
     private BigDecimal sqrt(BigDecimal num) {
-        if(num.compareTo(BigDecimal.ZERO) < 0) {
+        if (num.compareTo(BigDecimal.ZERO) < 0) {
             return BigDecimal.ZERO;
         }
         BigDecimal x = num.divide(new BigDecimal("2"), MathContext.DECIMAL128);
-        while(x.subtract(x = sqrtIteration(x, num)).abs().compareTo(new BigDecimal("0.0000000000000000000001")) > 0);
+        while (x.subtract(x = sqrtIteration(x, num)).abs().compareTo(new BigDecimal("0.0000000000000000000001")) > 0) ;
         return x;
     }
 
