@@ -28,7 +28,6 @@ public class MultiOperator implements Operator {
      */
     @Override
     public void exec() {
-
         if (!StackUtil.checkStackSize(stack, 2, ParseAndExecCommod.MULTI)) {
             BigDecimal para1 = new BigDecimal(stack.pop());
             BigDecimal para2 = new BigDecimal(stack.pop());
