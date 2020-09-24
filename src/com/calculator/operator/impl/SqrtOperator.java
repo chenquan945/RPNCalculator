@@ -40,6 +40,7 @@ public class SqrtOperator implements Operator {
     }
 
     private BigDecimal sqrt(BigDecimal num) {
+
         if (num.compareTo(BigDecimal.ZERO) < 0) {
             return BigDecimal.ZERO;
         }
